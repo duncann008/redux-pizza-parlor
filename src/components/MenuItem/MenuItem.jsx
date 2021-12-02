@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux'
 
-function MenuItem ({index ,item}) {
+function MenuItem ({index, item}) {
 
     const dispatch = useDispatch();
 

@@ -32,7 +32,7 @@ function App() {
     <div className='App'>
       <header className='App-header'>
         <h1 className='App-title'>Prime Pizza</h1>
-        <CheckOut/>
+        <CheckOut />
       </header>
   
       {/* <img src='images/pizza_photo.png' /> */}
