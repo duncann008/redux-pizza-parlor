@@ -14,10 +14,30 @@ const menuList = (state = [], action) =>    {
     }
     return state;
 }
+const checkoutList = (state = [], action) => {
+    if (action.type === 'ADD_ITEM') {
+        console.log(action);
+        let newState = [...state]
+        newState.push(action.payload)
+        return newState;
+    }else if (action.type === 'CHECK_OUT_LIST') {
+        console.log(action);
+        return state;
+    }else if (action.type === 'REMOVE_ITEM') {
+        console.log(action);
+        return action.payload;
+    }
+    return state;
+}
+    
+
+
+
 
 const reduxStore = createStore(
     combineReducers({
-        menuList
+        menuList,
+        checkoutList
     }),
     applyMiddleware(logger)
 );
