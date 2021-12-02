@@ -12,8 +12,7 @@ function MenuItem ({index ,item}) {
         console.log(showAdd);
 
         const thisItem = {
-            id: index,
-            quantity: 1
+            item: item
         }
 
 
@@ -21,7 +20,7 @@ function MenuItem ({index ,item}) {
             console.log('Added');
             dispatch({
                 type: 'ADD_ITEM',
-                payload:thisItem
+                payload: thisItem
             })
         }
         else  {
@@ -31,7 +30,7 @@ function MenuItem ({index ,item}) {
     }
   
 return  (
-    <td key={index}>{item.name}: <br></br>{item.description} <img key={index} src={item.image_path} width="150px"></img><button onClick={addOrRemove}>{showAdd ? 'Add' : 'Remove'}</button></td>
+    <td key={index}>{item.name}: <br></br>{item.description} <br></br>{item.price}<br></br><img key={index} src={item.image_path} width="150px"></img><button onClick={addOrRemove}>{showAdd ? 'Add' : 'Remove'}</button></td>
 
 )
 }

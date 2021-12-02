@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import MenuItem from "../../MenuItem/MenuItem";
+
 function MenuList() {
     const menuList = useSelector(store => store.menuList);
     console.log(menuList);
