@@ -32,7 +32,7 @@ const checkoutList = (state = [], action) => {
         console.log('updateState', updateState);
         console.log('in index.js', action.payload);
         
-        const anotherNewState = updateState.filter(payload => payload.id != payload.id);
+        const anotherNewState = updateState.filter(newThing => payload.id != newThing.id);
         return anotherNewState;
         
     }
