@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 
 
-function CheckOut() {
+function CheckOutPrice() {
 
     const checkoutList = useSelector((store) => store.checkoutList);
 
@@ -35,4 +35,4 @@ return (
 
 )
 }
-export default CheckOut;
+export default CheckOutPrice;

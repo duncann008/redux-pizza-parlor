@@ -14,6 +14,7 @@ const menuList = (state = [], action) =>    {
     }
     return state;
 }
+
 const checkoutList = (state = [], action) => {
     if (action.type === 'ADD_ITEM') {
         console.log(action);
@@ -27,17 +28,22 @@ const checkoutList = (state = [], action) => {
         let payload = action.payload;
         console.log('payload:', payload);
         let updateState = [...state];
-        // updateState.splice(action.payload);
-        // return state;
         console.log('updateState', updateState);
         console.log('in index.js', action.payload);
-        
         const anotherNewState = updateState.filter(newThing => payload.id != newThing.id);
         return anotherNewState;
         
-    }
-    return state;
+    }    return state;
 }
+
+
+    const infoForm = (state = [], action) => {
+        if (action.type === 'INFO_FORM') {
+            return newState;
+        
+    }
+}
+
     
 
 
