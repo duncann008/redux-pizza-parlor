@@ -11,20 +11,25 @@ function MenuItem ({index, item}) {
         console.log('you clicked the button')
         console.log(showAdd);
 
-        const thisItem = {
-            item: item
-        }
+        // const thisItem = {
+        //     item: item
+        // }
 
 
         if (showAdd === true)  {
             console.log('Added');
             dispatch({
                 type: 'ADD_ITEM',
-                payload: thisItem
+                payload: item
             })
         }
-        else  {
+        else if (showAdd === false) {
+            dispatch({
+                type: 'REMOVE_ITEM',
+                payload: item
+            })
             console.log('Removed');
+            console.log(item);
         }
      setAdd(!showAdd);
     }

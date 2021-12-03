@@ -6,8 +6,6 @@ import { useState } from 'react';
 
 function CheckOut() {
 
-    const [checkoutPrice, setCheckoutPrice] = useState(0);
-
     const checkoutList = useSelector((store) => store.checkoutList);
 
     const handleCheckout = () => {
@@ -16,21 +14,14 @@ function CheckOut() {
     }
     console.log(checkoutList);
     
-    const addCheckOutSum = () =>   {
+    const addCheckOutSum = () =>{
         let sum = 0;
         for (let item of checkoutList){
-            sum += Number(item.item.price)
+            sum += Number(item.price)
         }
         return sum;
-            // // let number = Number(item.price);
-            // setCheckoutPrice(checkoutPrice);
-            // console.log(checkoutPrice);
-            // return checkoutPrice;
-        
-        
     }
-    
-  
+
 
 
 return (

@@ -24,8 +24,17 @@ const checkoutList = (state = [], action) => {
         console.log(action);
         return state;
     }else if (action.type === 'REMOVE_ITEM') {
-        console.log(action);
-        return action.payload;
+        let payload = action.payload;
+        console.log('payload:', payload);
+        let updateState = [...state];
+        // updateState.splice(action.payload);
+        // return state;
+        console.log('updateState', updateState);
+        console.log('in index.js', action.payload);
+        
+        const anotherNewState = updateState.filter(payload => payload.id != payload.id);
+        return anotherNewState;
+        
     }
     return state;
 }
