@@ -2,21 +2,19 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 
-function InfoForm({ addNewInfo }) {
-    const history = useHistory();
-    const goToCheckout = () => {
-        console.log('go to /CheckOutList')
-        history.push('/CheckOutList');
-      };
+function InfoForm() {
+    
 
+  
 
   const dispatch = useDispatch();
-  let [infoToAdd, setInfoToAdd] = useState({ name: '', price: 0 , city: '', zip: 0 });
+
+  let [infoToAdd, setInfoToAdd] = useState({ name: '', address: '' , city: '', zip: '', delivery: '' });
 
   const handleNameChange = (event) => {
-    setProductToAdd({
+    setInfoToAdd({
       ...infoToAdd,
-      price: event.target.value,
+      name: event.target.value,
     });
   }
 
@@ -41,17 +39,30 @@ function InfoForm({ addNewInfo }) {
     });
   }
 
+  const handleDeliveryChange = (event) => {
+    setInfoToAdd({
+      ...infoToAdd,
+      delivery: event.target.value,
+    });
+  }
+
+  const history = useHistory();
+
   const addInfo = (event) => {
     event.preventDefault();
+    console.log(infoToAdd);
+    console.log('wbefwkgejrgeklrjge')
     dispatch({
-      type: 'ADD_NEW_PRODUCT',
+      type: 'INFO_FORM',
       payload: infoToAdd
   })
+    history.push('/CheckOutList');
   }
+
     
 
-
   return (
+      <div>
     <form onSubmit={(event) => addInfo(event)}>
       <input
         onChange={handleNameChange}
@@ -77,14 +88,16 @@ function InfoForm({ addNewInfo }) {
         placeholder='Zip'
       />
     <br></br>
-    <input type="radio" id="Pickup" name="order_type" value="Pickup"/>
+    <input onChange={handleDeliveryChange} type="radio" id="Pickup" name="order_type" value="Pickup"/>
     <label for="Pickup">Pickup</label><br></br>
-    <input type="radio" id="Delivery" name="order_type" value="Delivery"/>
+    <input onChange={handleDeliveryChange} type="radio" id="Delivery" name="order_type" value="Delivery"/>
     <label for="Delivery">Delivery</label>
     <br></br>
-    <button onClick={goToCheckout}>NEXT</button>
+    <button>NEXT</button>
 
     </form>
+    
+    </div>
   );
 }
 

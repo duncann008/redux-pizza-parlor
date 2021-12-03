@@ -28,8 +28,9 @@ return (
     
     <ul>
         <li>Total: ${addCheckOutSum()}</li>
+        
     </ul>    
-      
+    
     
 
 

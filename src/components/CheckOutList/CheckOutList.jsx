@@ -12,31 +12,20 @@ function CheckOutList() {
     //     history.push('/InfoForm');
     //   };
 
-    
-
-
-
 
 
 return  (
     <tbody>
             {checkoutList.map((item, index) => 
                 <tr key={index}>
-                    <td>{item.name}</td><td>{item.price}</td>
+                  <td>{item.name}</td><td>{item.price}</td>
                 </tr>
+                 
             )}
-           
+         
             
     </tbody>
 
-
-
-
-)
-
-
-
-}
-
+)}
 
 export default CheckOutList;
